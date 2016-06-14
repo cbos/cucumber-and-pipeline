@@ -1,0 +1,24 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd"
+                   logicalFilePath="changelog-001.xml">
+
+  <changeSet id="001" author="cbos">
+    <createTable tableName="credit_request">
+      <column name="id" type="bigint" autoIncrement="true">
+        <constraints nullable="false" primaryKey="true" />
+      </column>
+      <column name="version" type="bigint(20)" />
+      <column name="creationDate" type="datetime" />
+      <column name="naam" type="varchar(45)" />
+      <column name="adres" type="varchar(45)" />
+      <column name="postcode" type="varchar(45)" />
+      <column name="plaats" type="varchar(45)" />
+      <column name="bedrag" type="decimal(20,2)" />
+      <column name="status" type="varchar(45)" />
+      <column name="ontvangendoor" type="varchar(45)" />
+      <column name="verwerktdoor" type="varchar(45)" />
+      <column name="afwijsreden" type="varchar(45)" />
+    </createTable>
+  </changeSet>
+</databaseChangeLog>

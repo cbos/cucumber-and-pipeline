@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-3">
+
+    <form class="form-horizontal" role="form" name="creditRequestForm">
+      <div class="form-group"  ng-class="{'has-error': creditRequestForm.naam.$invalid}">
+        <label for="naam" class="col-sm-2 control-label">Naam</label>
+
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="naam" name="naam" placeholder="Naam" ng-model="creditRequest.naam" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="adres" class="col-sm-2 control-label">Adres</label>
+
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="adres" placeholder="Adres" ng-model="creditRequest.adres">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="postcode" class="col-sm-2 control-label">Postcode</label>
+
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="postcode" placeholder="000XX" ng-model="creditRequest.postcode">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="plaats" class="col-sm-2 control-label">Plaats</label>
+
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="plaats" placeholder="Plaats" ng-model="creditRequest.plaats">
+        </div>
+      </div>
+      <div class="form-group" ng-class="{'has-error': creditRequestForm.bedrag.$invalid}">
+        <label for="bedrag" class="col-sm-2 control-label">Bedrag</label>
+
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="bedrag" id="bedrag" placeholder="100000" ng-model="creditRequest.bedrag" required ng-pattern="/^[1-9][0-9]*$/">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-primary"
+                  ng-click="sendCreditRequest()"
+                  ng-disabled="!creditRequestForm.$valid">Dien aanvraag in</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="col-xs-3">
+    <div ng-repeat="alert in alerts" class="alert alert-{{alert.type}}">
+      <button type="button" class="close" ng-click="closeAlert(alert)"><span aria-hidden="true">&times;</span><span
+        class="sr-only">Close</span>
+      </button>
+      <div ng-bind-html="alert.message"></div>
+    </div>
+  </div>
+</div>

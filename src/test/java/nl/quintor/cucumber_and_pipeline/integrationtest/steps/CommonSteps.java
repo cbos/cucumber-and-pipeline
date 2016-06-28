@@ -15,7 +15,11 @@ public class CommonSteps {
     public void setup() {
         final TestContext testContext = TestContext.getInstance();
         testContext.start();
-        testContext.getWebDriver().get("http://localhost:8082");
+        testContext.getWebDriver().get(getApplicationUrl());
+    }
+    
+    private String getApplicationUrl() {
+        return System.getProperty("target.url", "http://localhost:8082");
     }
 
     @After

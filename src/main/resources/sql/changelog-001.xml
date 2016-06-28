@@ -14,7 +14,7 @@
       <column name="adres" type="varchar(45)" />
       <column name="postcode" type="varchar(45)" />
       <column name="plaats" type="varchar(45)" />
-      <column name="bedrag" type="decimal(20,2)" />
+      <column name="bedrag" type="numeric(20,2)" />
       <column name="status" type="varchar(45)" />
       <column name="ontvangendoor" type="varchar(45)" />
       <column name="verwerktdoor" type="varchar(45)" />

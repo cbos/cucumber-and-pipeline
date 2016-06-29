@@ -1,8 +1,4 @@
 node {
-   
-   stage 'Checkout'
-   git url: 'https://github.com/cbos/cucumber-and-pipeline'
-
    stage 'Build'
    // Run the maven build and unit tests
    sh "mvn clean install"

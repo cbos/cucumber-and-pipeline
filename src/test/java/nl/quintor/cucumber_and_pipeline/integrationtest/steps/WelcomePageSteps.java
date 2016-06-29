@@ -14,8 +14,8 @@ import nl.quintor.cucumber_and_pipeline.integrationtest.pages.WelcomePage;
 public class WelcomePageSteps {
 
     private WelcomePage welcomePage;
-    private NewCreditRequestPage creditRequestPage;
-    private CreditStatusPage creditStatusPage;
+    static NewCreditRequestPage creditRequestPage;
+    static CreditStatusPage creditStatusPage;
 
     @Given("^A user opens the welcome page$")
     public void aUserOpensTheWelcomePage() throws Throwable {

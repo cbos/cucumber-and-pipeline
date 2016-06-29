@@ -24,21 +24,21 @@
       </tr>
       </thead>
       <tbody>
-      <tr ng-repeat="creditRequest in creditRequests | orderBy:'-id'">
-        <td>{{creditRequest.id}}</td>
-        <td>{{creditRequest.naam}}</td>
-        <td>{{creditRequest.adres}}</td>
-        <td>{{creditRequest.postcode}}</td>
-        <td>{{creditRequest.plaats}}</td>
-        <td>{{creditRequest.bedrag | currency : "€ " : 0}}</td>
-        <td>{{creditRequest.creationDate | date:'medium'}}</td>
-        <td><i class="fa " ng-class="{ 'fa-circle-o': creditRequest.status=='ONTVANGEN',
+      <tr class="creditRequestRow" ng-repeat="creditRequest in creditRequests | orderBy:'-id'">
+        <td class="id">{{creditRequest.id}}</td>
+        <td class="naam">{{creditRequest.naam}}</td>
+        <td class="adres">{{creditRequest.adres}}</td>
+        <td class="postcode">{{creditRequest.postcode}}</td>
+        <td class="plaats">{{creditRequest.plaats}}</td>
+        <td class="bedrag">{{creditRequest.bedrag | currency : "€ " : 0}}</td>
+        <td class="datum">{{creditRequest.creationDate | date:'medium'}}</td>
+        <td class="status"><i class="fa " ng-class="{ 'fa-circle-o': creditRequest.status=='ONTVANGEN',
           'fa-spin fa-spinner': creditRequest.status=='IN_BEHANDELING',
           'fa-exclamation-circle color-red': creditRequest.status=='AFGEWEZEN',
           'fa-check-circle color-green': creditRequest.status=='AKKOORD'}"></i>&nbsp;{{creditRequest.status}}</td>
-        <td>{{creditRequest.ontvangendoor}}</td>
-        <td>{{creditRequest.verwerktdoor}}</td>
-        <td>{{creditRequest.afwijsreden}}</td>
+        <td class="ontvangendoor">{{creditRequest.ontvangendoor}}</td>
+        <td class="verwerktdoor">{{creditRequest.verwerktdoor}}</td>
+        <td class="afwijsreden">{{creditRequest.afwijsreden}}</td>
       </tr>
       </tbody>
     </table>

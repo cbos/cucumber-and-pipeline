@@ -31,7 +31,7 @@ angular.module('dockerUiApp')
         }
         counter = counter + 5;
         angular.element('#reloadprogressbar').css('width', counter+'%').attr('aria-valuenow', counter);
-      }, 250);
+      }, 166);
     };
 
     $scope.stopAutoReload = function () {

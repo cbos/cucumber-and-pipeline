@@ -13,7 +13,7 @@ public class CreditRequestScheduler {
     @Autowired
     private CreditRequestQueue creditRequestQueue;
     
-    @Scheduled(fixedDelay = 5000l)
+    @Scheduled(fixedDelay = 4000l)
     public void handleNewRequests(){
         final Long creditRequestId = creditRequestQueue.pullFromQueue();
         if(creditRequestId != null) {
@@ -29,7 +29,7 @@ public class CreditRequestScheduler {
 
     private void waitSomeMoments() {
         try {
-            Thread.sleep(15000);
+            Thread.sleep(10000);
         } catch (InterruptedException e) {
             // Put the interrupt back on the Thread and go on
             Thread.currentThread().interrupt();

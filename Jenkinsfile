@@ -1,7 +1,7 @@
 node {
    
    stage 'Checkout'
-   git url: 'https://github.com/cbos/cucumber-and-pipeline'
+   checkout scm
 
    stage 'Build'
    // Run the maven build and unit tests

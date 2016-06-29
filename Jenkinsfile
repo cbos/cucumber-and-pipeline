@@ -27,15 +27,19 @@ node {
    
    step([$class: 'CucumberReportPublisher', fileExcludePattern: '', fileIncludePattern: 'cucumber*/*.json', ignoreFailedTests: false, jenkinsBasePath: '', jsonReportDirectory: 'target/', missingFails: false, parallelTesting: false, pendingFails: false, skippedFails: false, undefinedFails: false])
    
-   stage 'Continue?'
-   
-   input message: 'Doorgaan naar productie?', ok: 'Gaan!'
-   
-   stage 'Deploy to production'
-   
    echo "Deploy application to production"
 }
 
+stage 'Continue?'
+input message: 'Doorgaan naar productie?', ok: 'Gaan!'
+
+stage 'Deploy to production'
+node {
+    echo 'Production server looks to be alive'
+    sh "sleep 10"
+    echo "Deployed to production"
+}
+    
 def hostPort(container) {
     sh "docker inspect --format='{{(index (index .NetworkSettings.Ports \"8082/tcp\") 0).HostPort}}' ${container.id} > hostPort"
     readFile('hostPort').trim()
